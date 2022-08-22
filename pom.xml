@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.pedrojm96</groupId>
+  <artifactId>CoreLibBungee</artifactId>
+  <version>2.0.0</version>
+  <name>CoreLibBungee</name>
+  <description>Librerias necesarias para el funcionamiento de los plugin de pedrojm96 en ambiente bungee.</description>
+  <properties>
+        <project.java.version>1.8</project.java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+  
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.9.0</version>
+        <configuration>
+          <source>${project.java.version}</source>
+          <target>${project.java.version}</target>
+		  <encoding>${project.build.sourceEncoding}</encoding>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+ <pluginRepositories>
+    <pluginRepository>
+        <id>apache.snapshots</id>
+        <url>https://repository.apache.org/snapshots/</url>
+    </pluginRepository>
+ </pluginRepositories>
+ <repositories>
+    <!--Bungeecord-->
+    <repository>
+        <id>bungeecord-repo</id>
+        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </repository>
+  </repositories>
+
+  <dependencies>
+	<!--Bungeecord API-->
+    <dependency>
+       <groupId>net.md-5</groupId>
+       <artifactId>bungeecord-api</artifactId>
+       <version>1.18-R0.1-SNAPSHOT</version>
+       <type>jar</type>
+       <scope>provided</scope>
+     </dependency>
+     <dependency>
+       <groupId>net.md-5</groupId>
+       <artifactId>bungeecord-api</artifactId>
+       <version>1.18-R0.1-SNAPSHOT</version>
+       <type>javadoc</type>
+       <scope>provided</scope>
+     </dependency>
+    <dependency>
+      <groupId>com.zaxxer</groupId>
+      <artifactId>HikariCP</artifactId>
+      <version>3.4.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+       <artifactId>slf4j-simple</artifactId>
+       <version>1.7.25</version>
+       <scope>provided</scope>
+     </dependency>
+     <dependency>
+  		<groupId>com.rabbitmq</groupId>
+  		<artifactId>amqp-client</artifactId>
+  		<version>5.10.0</version>
+  		<scope>provided</scope>
+	</dependency>
+  </dependencies>
+</project>
