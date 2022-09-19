@@ -15,7 +15,7 @@ import net.md_5.bungee.api.plugin.Plugin;
  * Contiene los metodos para enviar mensajes en consola en el servidor de minecraft implementando la api de bukkt/spigot.
  * 
  * @author PedroJM96
- * @version 1.0 10-10-2018
+ * @version 1.1 30-08-2022
  *
  */
 public class CoreLog {
@@ -44,10 +44,10 @@ public class CoreLog {
 	private boolean debug = false;
 	
 	
-	public CoreLog(Plugin plugin,Color color,boolean debug) {
+	public CoreLog(Plugin plugin,String name, Color color,boolean debug) {
 		this.plugin = plugin;
 		this.color = color;
-		this.prefix = this.color.get()+ "["+Color.GRAY.get()+this.plugin.getDescription().getName()+this.color.get()+"]";
+		this.prefix = this.color.get()+ "["+Color.GRAY.get()+name+this.color.get()+"]";
 		this.debug = debug;
 
 	}
@@ -58,10 +58,11 @@ public class CoreLog {
 	
 	
 	
-	public CoreLog(Plugin plugin,Color color) {
+	public CoreLog(Plugin plugin,String name,Color color) {
 		this.plugin = plugin;
 		this.color = color;
-		this.prefix = this.color.get()+ "["+Color.GRAY.get()+this.plugin.getDescription().getName()+this.color.get()+"]";
+		this.prefix = this.color.get()+ "["+Color.GRAY.get()+name+this.color.get()+"]";
+		
 	}
 	
 	public void info(String info)

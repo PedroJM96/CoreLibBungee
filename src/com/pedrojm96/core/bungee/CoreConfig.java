@@ -27,7 +27,7 @@ import net.md_5.bungee.config.YamlConfiguration;
  * Facilita la creacion de configuracion en el servidor de minecraft implementando la api de bukkt/spigot.
  * 
  * @author PedroJM96
- * @version 1.0 31-12-2018
+ * @version 1.1 19-9-2022
  *
  */
 public class CoreConfig {
@@ -88,6 +88,9 @@ public class CoreConfig {
 	
 	private String getInputStreamToString(InputStream dataIn) {
 		String result ="";
+		if(dataIn==null) {
+			return result;
+		}
 		try {
 			result = CharStreams.toString(new InputStreamReader(
 				     dataIn, Charset.forName("UTF-8")));
