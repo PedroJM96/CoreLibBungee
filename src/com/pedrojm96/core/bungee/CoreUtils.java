@@ -9,7 +9,17 @@ package com.pedrojm96.core.bungee;
  */
 public class CoreUtils {
 	
-	
+	public static Class<?> getClass(String name)
+	  {
+	    try
+	    {
+	      return Class.forName(name);
+	    }
+	    catch (ClassNotFoundException e) {
+	    	
+	    }
+	    return null;
+	  }
 	
 	public static boolean isdouble(String s){
 		try{

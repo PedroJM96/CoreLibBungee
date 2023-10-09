@@ -12,6 +12,7 @@ import java.util.Map;
 
 import com.pedrojm96.core.bungee.CoreLog;
 import com.pedrojm96.core.bungee.CorePlugin;
+import com.pedrojm96.core.bungee.CoreUtils;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
@@ -66,7 +67,16 @@ public class CoreMySQL implements CoreSQL {
 		HikariConfig config = new HikariConfig();
 		config.setPoolName(plugin.getInstance().getDescription().getName()+"MySQLPool");
 		config.setJdbcUrl("jdbc:mysql://"+this.host+":"+this.port+"/"+this.database);
-		config.setDriverClassName("com.mysql.jdbc.Driver");
+		int version = CoreUtils.toint(plugin.getInstance().getProxy().getVersion().split(":")[4]);
+		
+		  if(version>=1610) {
+			  config.setDriverClassName("com.mysql.cj.jdbc.Driver");
+			  
+		  }else { 
+			  config.setDriverClassName("com.mysql.jdbc.Driver");
+			 
+		  }
+
 		config.setUsername(this.username);
 		config.setPassword(this.password);
 		config.setMaxLifetime(180000L);
