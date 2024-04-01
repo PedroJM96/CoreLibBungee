@@ -11,7 +11,7 @@ import net.md_5.bungee.api.connection.ProxiedPlayer;
 
 
 /**
- * Contiene los metodos para codificar string con colores y enviar mensajes a los jugadores en el servidor de minecraft implementando la api de bungecoord.
+ * Contiene los metodos para codificar string con colores y enviar mensajes a los jugadores en el servidor de minecraft implementando  la api de bungecoord.
  * 
  * @author PedroJM96
  * @version 1.1 26-01-2019
